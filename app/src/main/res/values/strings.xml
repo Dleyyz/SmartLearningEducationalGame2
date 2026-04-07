@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SmartLearningEducationalGame2</string>
+    <string name="profile_email_format">📜 %s</string>
+    <string name="teacher_level_format">★ TEACHER LEVEL %d</string>
+    <string name="student_level_format">★ LEVEL %d</string>
+    <string name="success_rate_format">%d%%</string>
+    <string name="level_explorer_format">LEVEL %d EXPLORER</string>
+    <string name="hp_value_format">%d / 100</string>
+    <string name="exp_value_format">%d / 100</string>
+    <string name="coins_display_format">🪙 %d Coins</string>
+    <string name="failed_to_load_profile">Failed to load profile.</string>
+</resources>

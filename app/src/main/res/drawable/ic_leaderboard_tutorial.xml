@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background Circle with Glow -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFD700" />
+            <size android:width="120dp" android:height="120dp" />
+        </shape>
+    </item>
+    
+    <!-- Podium 1 (Center) -->
+    <item android:left="45dp" android:right="45dp" android:top="40dp" android:bottom="30dp">
+        <shape>
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+
+    <!-- Podium 2 (Left) -->
+    <item android:left="25dp" android:right="65dp" android:top="60dp" android:bottom="30dp">
+        <shape>
+            <solid android:color="#E0E0E0" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+
+    <!-- Podium 3 (Right) -->
+    <item android:left="65dp" android:right="25dp" android:top="70dp" android:bottom="30dp">
+        <shape>
+            <solid android:color="#CD7F32" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+    
+    <!-- Crown on Top -->
+    <item android:left="48dp" android:right="48dp" android:top="25dp" android:bottom="75dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFEB3B" />
+        </shape>
+    </item>
+</layer-list>

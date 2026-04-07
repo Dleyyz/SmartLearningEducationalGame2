@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#40FFFFFF">
+    <item>
+        <layer-list>
+            <!-- 3D Shadow/Bottom part -->
+            <item android:top="4dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="30dp" />
+                    <solid android:color="#E65100" />
+                </shape>
+            </item>
+            <!-- Top part with gradient -->
+            <item android:bottom="4dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="30dp" />
+                    <gradient
+                        android:angle="90"
+                        android:endColor="#FFEB3B"
+                        android:startColor="#FF9800"
+                        android:type="linear" />
+                    <padding
+                        android:bottom="8dp"
+                        android:left="24dp"
+                        android:right="24dp"
+                        android:top="8dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

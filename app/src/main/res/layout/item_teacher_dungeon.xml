@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_battle_dialog"
+    android:elevation="2dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDungeonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dungeon Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/tvRequiredLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Required Lvl: 1"
+            android:textSize="12sp"
+            android:textColor="#757575"/>
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnManageQuestions"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#2196F3"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Manage Questions"/>
+
+        <ImageButton
+            android:id="@+id/btnDeleteDungeon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#D32F2F"
+            android:contentDescription="Delete Dungeon"/>
+    </LinearLayout>
+
+</LinearLayout>

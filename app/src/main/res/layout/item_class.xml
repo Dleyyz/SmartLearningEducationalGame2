@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_battle_dialog"
+    android:elevation="2dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/tvStudentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Students Enrolled"
+            android:textSize="12sp"
+            android:textColor="#757575"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnAddStudentToClass"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Add Student"
+        android:layout_marginEnd="8dp"
+        android:tint="#2196F3"/>
+
+    <ImageButton
+        android:id="@+id/btnDeleteClass"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Delete Class"
+        android:tint="#D32F2F"/>
+
+</LinearLayout>

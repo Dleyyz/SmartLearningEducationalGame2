@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- Type Icon -->
+        <ImageView
+            android:id="@+id/ivQuestTypeIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_nav_quest_new"
+            app:tint="#311B92"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_coin_circle"
+            android:backgroundTint="#F0F0F0"
+            android:padding="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/ivQuestTypeIcon"
+            android:layout_toStartOf="@id/layoutTeacherActions"
+            android:layout_marginStart="12dp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/tvQuestTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Math Chapter 2"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+                
+                <TextView
+                    android:id="@+id/tvQuestReward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+50 XP"
+                    android:textColor="#2979FF"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" • "
+                    android:textColor="#B3B3B3"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tvQuestDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NORMAL"
+                    android:textColor="#4CAF50"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Teacher Action Buttons -->
+        <LinearLayout
+            android:id="@+id/layoutTeacherActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <!-- ASSIGN BUTTON (SOLID VIBRANT GREEN) -->
+            <TextView
+                android:id="@+id/btnAssignQuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASSIGN"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/bg_button_assign"
+                android:layout_marginEnd="8dp"
+                android:elevation="2dp" />
+
+            <ImageButton
+                android:id="@+id/btnDeleteQuest"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@android:drawable/ic_menu_delete"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="#F44336"
+                android:contentDescription="Delete"/>
+        </LinearLayout>
+
+        <!-- Navigation Arrow -->
+        <ImageView
+            android:id="@+id/ivArrowIndicator"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_media_play"
+            app:tint="#B3B3B3" />
+
+        <TextView
+            android:id="@+id/tvQuestStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:text="COMPLETED"
+            android:textColor="#4CAF50"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

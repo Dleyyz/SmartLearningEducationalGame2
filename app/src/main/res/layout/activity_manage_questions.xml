@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_gradient">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="24dp"
+        android:gravity="start"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvQuestTitleHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Manage Quest"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"/>
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DESIGN YOUR CHALLENGES"
+            android:textColor="#B3FFFFFF"
+            android:textSize="12sp"
+            android:letterSpacing="0.1"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintTop_toBottomOf="@id/header_section">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="40dp">
+
+            <!-- Form Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CRAFT A NEW CHALLENGE"
+                        android:textStyle="bold"
+                        android:textColor="#311B92"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <EditText
+                        android:id="@+id/etQuestionText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="80dp"
+                        android:hint="Question Text"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:inputType="textMultiLine" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                        <EditText android:id="@+id/etAns1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="54dp" android:hint="Ans A" android:background="@drawable/bg_input_field" android:paddingHorizontal="16dp" android:layout_marginEnd="4dp" />
+                        <EditText android:id="@+id/etAns2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="54dp" android:hint="Ans B" android:background="@drawable/bg_input_field" android:paddingHorizontal="16dp" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+                    
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                        <EditText android:id="@+id/etAns3" android:layout_width="0dp" android:layout_weight="1" android:layout_height="54dp" android:hint="Ans C" android:background="@drawable/bg_input_field" android:paddingHorizontal="16dp" android:layout_marginEnd="4dp" />
+                        <EditText android:id="@+id/etAns4" android:layout_width="0dp" android:layout_weight="1" android:layout_height="54dp" android:hint="Ans D" android:background="@drawable/bg_input_field" android:paddingHorizontal="16dp" android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/etCorrectAns"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:hint="Correct Answer"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:background="@drawable/bg_pill_toggle"
+                        android:backgroundTint="#FFE7E7"
+                        android:layout_marginBottom="16dp">
+                        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="🔥 BOSS QUESTION" android:textStyle="bold" android:textColor="#D32F2F" />
+                        <CheckBox android:id="@+id/cbIsBoss" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnSaveQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="SAVE CHALLENGE"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#311B92" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvQuestionsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#1A237E"
+        android:elevation="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout android:id="@+id/navQuest" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_nav_quest_new" app:tint="#FFEB3B"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quest" android:textColor="#FFEB3B" android:textSize="10sp"/></LinearLayout>
+        <LinearLayout android:id="@+id/navAvatar" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_camera" app:tint="#B3FFFFFF"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profile" android:textColor="#B3FFFFFF" android:textSize="10sp"/></LinearLayout>
+        <LinearLayout android:id="@+id/navClasses" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_sort_by_size" app:tint="#B3FFFFFF"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Classes" android:textColor="#B3FFFFFF" android:textSize="10sp"/></LinearLayout>
+        <LinearLayout android:id="@+id/navDungeons" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_compass" app:tint="#B3FFFFFF"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dungeons" android:textColor="#B3FFFFFF" android:textSize="10sp"/></LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

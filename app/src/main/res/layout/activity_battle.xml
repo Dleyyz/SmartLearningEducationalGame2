@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A237E">
+
+    <!-- FULL SCREEN WALLPAPER BACKGROUND -->
+    <ImageView
+        android:id="@+id/ivBattleWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/battle_bg"
+        android:scaleType="centerCrop"
+        android:alpha="0.8"
+        android:contentDescription="Battle Background"/>
+
+    <!-- Vignette/Lighting Overlay for depth -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_battle_vignette"/>
+
+    <!-- RED BLOOD LOW HEALTH EFFECT -->
+    <View
+        android:id="@+id/viewLowHealthOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_blood_vignette"
+        android:visibility="gone"/>
+
+    <!-- Enemy Section -->
+    <RelativeLayout
+        android:id="@+id/enemySection"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentTop="true">
+        
+        <!-- Enemy Detail Box -->
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_battle_dialog"
+            android:padding="12dp"
+            android:elevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tvEnemyName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="BOSS"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#D32F2F"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.05"/>
+                <TextView
+                    android:id="@+id/tvEnemyLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lv5"
+                    android:textColor="#333333"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HP"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:background="#D32F2F"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    android:layout_marginEnd="6dp"/>
+                <ProgressBar
+                    android:id="@+id/pbEnemyHealth"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/bg_health_bar"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Enemy Sprite with Shadow and Glow -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="-30dp"> <!-- Negative margin to push it further right -->
+            
+            <!-- Enemy Shadow -->
+            <View
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_character_shadow"
+                android:alpha="0.4"/>
+
+            <!-- Enemy Glow/Aura -->
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/bg_particle"
+                android:alpha="0.2"
+                android:layout_gravity="center"
+                app:tint="#D32F2F"/>
+
+            <ImageView
+                android:id="@+id/ivEnemySprite"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/monster_villain"
+                android:contentDescription="Enemy Sprite"
+                android:scaleType="fitCenter"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <!-- Player Section -->
+    <RelativeLayout
+        android:id="@+id/playerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomSection"
+        android:layout_below="@+id/enemySection">
+        
+        <!-- Player Sprite with Shadow -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp">
+            
+            <View
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_character_shadow"
+                android:alpha="0.4"/>
+
+            <ImageView
+                android:id="@+id/ivPlayerSprite"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/hero_player"
+                android:contentDescription="Player Sprite"
+                android:scaleType="fitCenter"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_battle_dialog"
+            android:padding="12dp"
+            android:elevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tvPlayerName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="EXPLORER"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#1A237E"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.05"/>
+                <TextView
+                    android:id="@+id/tvPlayerLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lv1"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            
+            <!-- HP Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HP"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:background="#4CAF50"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    android:layout_marginEnd="6dp"/>
+                <ProgressBar
+                    android:id="@+id/pbPlayerHealth"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/bg_health_bar"/>
+            </LinearLayout>
+            
+            <!-- XP Bar REMOVED as per request -->
+
+            <TextView
+                android:id="@+id/tvPlayerHPText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100 / 100"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Bottom Section -->
+    <LinearLayout
+        android:id="@+id/bottomSection"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#121212"
+        android:padding="12dp">
+
+        <!-- Question Panel looks like a command panel -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:background="@drawable/bg_battle_panel"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginEnd="8dp">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚔️ BRAIN CHALLENGE"
+                    android:textColor="#FFEB3B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvQuestionContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Loading..."
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnBattleRun"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="RETREAT"
+                android:background="@drawable/bg_button_retreat"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                app:backgroundTint="@null"
+                android:elevation="4dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="2"
+                android:rowCount="2">
+                <TextView android:id="@+id/btnAnswer1" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="4dp" android:background="@drawable/bg_battle_button_v2" android:gravity="center" android:textColor="#000000" android:textStyle="bold" android:textSize="16sp" android:elevation="2dp" android:clickable="true" android:focusable="true"/>
+                <TextView android:id="@+id/btnAnswer2" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="4dp" android:background="@drawable/bg_battle_button_v2" android:gravity="center" android:textColor="#000000" android:textStyle="bold" android:textSize="16sp" android:elevation="2dp" android:clickable="true" android:focusable="true"/>
+                <TextView android:id="@+id/btnAnswer3" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="4dp" android:background="@drawable/bg_battle_button_v2" android:gravity="center" android:textColor="#000000" android:textStyle="bold" android:textSize="16sp" android:elevation="2dp" android:clickable="true" android:focusable="true"/>
+                <TextView android:id="@+id/btnAnswer4" android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:layout_margin="4dp" android:background="@drawable/bg_battle_button_v2" android:gravity="center" android:textColor="#000000" android:textStyle="bold" android:textSize="16sp" android:elevation="2dp" android:clickable="true" android:focusable="true"/>
+            </GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Feedback Layer -->
+    <TextView
+        android:id="@+id/tvFeedbackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:elevation="30dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:letterSpacing="0.1"/>
+
+    <RelativeLayout
+        android:id="@+id/layoutLoadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1A237E"
+        android:elevation="40dp"
+        android:gravity="center"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ProgressBar android:layout_width="64dp" android:layout_height="64dp" android:indeterminateTint="#FFEB3B" android:layout_marginBottom="16dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ENTERING BATTLE..." android:textSize="18sp" android:textStyle="bold" android:textColor="#FFFFFF" android:letterSpacing="0.1"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutFinishOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:visibility="gone"
+        android:elevation="50dp">
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_battle_dialog"
+            android:padding="32dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tvFinishResultTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FINISHED!"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-black"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"/>
+            <TextView
+                android:id="@+id/tvFinishRewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rewards Loaded..."
+                android:textColor="#757575"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"/>
+            <Button
+                android:id="@+id/btnFinishBattle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="RETURN TO MAP"
+                android:background="@drawable/bg_button_quest"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:backgroundTint="@null"
+                android:elevation="8dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

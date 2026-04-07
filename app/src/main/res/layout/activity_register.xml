@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_gradient">
+
+    <!-- Cinematic Depth Layers -->
+    <View
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@drawable/bg_particle"
+        android:alpha="0.08"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-80dp"
+        android:layout_marginEnd="-80dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- Title Section -->
+            <TextView
+                android:id="@+id/tvCreateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Create Your Hero"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Every hero begins their journey here."
+                android:textColor="#FFEB3B"
+                android:textSize="16sp" />
+
+            <!-- Input Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical">
+
+                <!-- Hero Name Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/bg_input_field"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                    app:startIconTint="#757575">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegisterName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Hero Name"
+                        android:inputType="textPersonName"
+                        android:textColor="#333333"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="16sp"
+                        android:padding="0dp"
+                        android:gravity="center_vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Email Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_input_field"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:startIconDrawable="@android:drawable/ic_dialog_email"
+                    app:startIconTint="#757575">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegisterEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#333333"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="16sp"
+                        android:padding="0dp"
+                        android:gravity="center_vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Secret Code (Password) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_input_field"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#757575"
+                    app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:startIconTint="#757575">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegisterPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Secret Code"
+                        android:inputType="textPassword"
+                        android:textColor="#333333"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="16sp"
+                        android:padding="0dp"
+                        android:gravity="center_vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Confirm Code -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_input_field"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#757575"
+                    app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:startIconTint="#757575">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRegisterConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Confirm Code"
+                        android:inputType="textPassword"
+                        android:textColor="#333333"
+                        android:textColorHint="#9E9E9E"
+                        android:textSize="16sp"
+                        android:padding="0dp"
+                        android:gravity="center_vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Role Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Choose Your Role"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/rgRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbStudent"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_role_card"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Student Explorer 🎓"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:checked="true"
+                    android:elevation="2dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTeacher"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_role_card"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="Teacher Guide 🧙"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:elevation="2dp"/>
+            </RadioGroup>
+
+            <!-- Action Button -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Level 1 Hero will be created"
+                android:textColor="#B3FFFFFF"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_quest"
+                android:text="START YOUR QUEST"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                android:stateListAnimator="@null"
+                android:elevation="4dp" />
+
+            <!-- Footer -->
+            <TextView
+                android:id="@+id/tvBackToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:text="Already a hero? Continue your adventure"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:background="?attr/selectableItemBackground" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236122340742",
+    "project_id": "smartlearningeducationalgame2",
+    "storage_bucket": "smartlearningeducationalgame2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236122340742:android:26f409cce56e6a905c8007",
+        "android_client_info": {
+          "package_name": "com.example.smartlearningeducationalgame2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRjwCuNcEZukjTM0kD2eBRICmjrUDWB9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_battle_dialog"
+    android:elevation="2dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question text goes here..."
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/tvBossIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔥 BOSS QUESTION 🔥"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            android:visibility="gone"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tvCorrectAnswerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct: Ans 1"
+            android:textSize="11sp"
+            android:textColor="#4CAF50"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnEditQuestion"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_menu_edit"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#2196F3"
+        android:layout_marginEnd="4dp"/>
+
+    <ImageButton
+        android:id="@+id/btnDeleteQuestion"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#D32F2F"/>
+
+</LinearLayout>
